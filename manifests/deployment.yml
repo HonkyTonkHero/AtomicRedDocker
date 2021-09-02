@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "dsk7-f4bc"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "dsk7-f4bc"
+  template:
+    metadata:
+      labels:
+        app: "dsk7-f4bc"
+    spec:
+      containers:
+        - name: "dsk7-f4bc"
+          image: "panxdrlab.azurecr.io/dsk7"
+          ports:
+          - containerPort: 80
